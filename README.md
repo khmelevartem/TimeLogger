@@ -1,21 +1,32 @@
+#TimeLogger
+
 This is a Kotlin Multiplatform project targeting Android, iOS, Web, Desktop.
 
-* `/composeApp` is for code that will be shared across your Compose Multiplatform applications.
-  It contains several subfolders:
-  - `commonMain` is for code that’s common for all targets.
-  - Other folders are for Kotlin code that will be compiled for only the platform indicated in the folder name.
-    For example, if you want to use Apple’s CoreCrypto for the iOS part of your Kotlin app,
-    `iosMain` would be the right folder for such calls.
+##run
 
-* `/iosApp` contains iOS applications. Even if you’re sharing your UI with Compose Multiplatform, 
-  you need this entry point for your iOS app. This is also where you should add SwiftUI code for your project.
+- Web: `:composeApp:wasmJsBrowserDevelopmentRun`
+- Desktop: `desktopRun -DmainClass=com.tubetoast.time.logger.MainKt --quiet`
 
+##what's this
 
-Learn more about [Kotlin Multiplatform](https://www.jetbrains.com/help/kotlin-multiplatform-dev/get-started.html),
-[Compose Multiplatform](https://github.com/JetBrains/compose-multiplatform/#compose-multiplatform),
-[Kotlin/Wasm](https://kotl.in/wasm/)…
+Главная цель проекта - снизить психологический порог для обретения привычки логгирования времени,
+потраченного на любые повседневные дела, и сделать эту привичку естественной. 
+Анализ истории распределения времени может дать инсайты относительно личной продуктивности
+и немного увеличить уровень общей осознанности.
 
-We would appreciate your feedback on Compose/Web and Kotlin/Wasm in the public Slack channel [#compose-web](https://slack-chats.kotlinlang.org/c/compose-web).
-If you face any issues, please report them on [GitHub](https://github.com/JetBrains/compose-multiplatform/issues).
+##critical features
 
-You can open the web application by running the `:composeApp:wasmJsBrowserDevelopmentRun` Gradle task.
+- сохранение истории
+  - в моменте: старт - выбор категории - стоп
+  - пост-фактум
+- представление истории в наглядном формате
+
+##nice to have features
+
+- возможность заводить регулярные события
+- фильтры по истории
+- редактирование истории
+- предложение категорий, наиболее подходящих по времени, в момент заполнения
+- сихронизация на различных устрайствах
+- интеграция с Jira
+- реализация Помодорро
